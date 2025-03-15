@@ -13,6 +13,17 @@ img {
     max-width: 100%;
     height: auto;
 }
+.badge-images {
+    display: flex;
+    justify-content: center; /* Centers images */
+    gap: 20px; /* Equal spacing between badges */
+    margin-top: 10px;
+}
+
+.badge-images img {
+    width: 80px; /* Ensure uniform size */
+    height: auto;
+}
 
 /* ==================== Navigation ==================== */
 nav {
