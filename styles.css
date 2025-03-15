@@ -294,12 +294,14 @@ nav {
 
 .certifications-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-around; /* Space them evenly in one row */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 20px;
 }
 
 .certification {
-    width: 30%;
+    width: 30%; /* Make them equal width */
+    min-width: 250px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -319,6 +321,17 @@ nav {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .certifications-container {
+        flex-direction: column; /* Stack them vertically */
+        align-items: center;
+    }
+
+    .certification {
+        width: 80%; /* Make them take up more space */
+    }
+}
 /* ==================== Experience Section ==================== */
 #experience {
     padding: 80px 10%;
