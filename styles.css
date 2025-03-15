@@ -106,8 +106,8 @@ nav {
 .hero-image::before {
     content: "";
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 350px;  /* Reduced from 420px */
+    height: 350px; /* Reduced from 420px */
     border-radius: 50%;
     border: 4px dashed rgba(0, 255, 255, 0.9);
     animation: rotateCircle 8s linear infinite;
@@ -132,7 +132,16 @@ nav {
         flex-direction: column;
         text-align: center;
     }
+@media (max-width: 768px) {
+    .hero-image::before {
+        width: 280px;
+        height: 280px;
+    }
 
+    .hero-image img {
+        width: 220px;
+    }
+}
     .social-buttons-container {
         justify-content: center;
         flex-wrap: wrap;
@@ -515,9 +524,11 @@ nav {
     }
 
 .hero-image img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+    width: 280px; /* Adjusted to fit inside the circle */
+    height: auto;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
 }
     .service-card,
     .certification {
