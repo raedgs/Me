@@ -276,14 +276,24 @@ Cloud Deployment & Monitoring</p>
 <style>
 .certifications-container {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-around; /* Distributes items evenly */
+    align-items: stretch; /* Ensures equal height */
+    gap: 20px; /* Adds space between cards */
 }
 
 .certification {
-    perspective: 1000px; /* 3D effect */
+    flex: 1; /* Makes all cards take equal space */
+    min-width: 300px; /* Ensures they don’t shrink too much */
+    max-width: 350px; /* Controls the width */
+    text-align: center; /* Aligns text properly */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .certification-card {
     width: 250px;
