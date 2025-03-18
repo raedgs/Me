@@ -277,15 +277,16 @@ Cloud Deployment & Monitoring</p>
 .certifications-container {
     display: flex;
     flex-wrap: nowrap; /* Ensures all certifications stay in one row */
-    justify-content: space-between; /* Distributes items evenly */
+    justify-content: flex-start; /* Aligns the certifications to the left */
     align-items: center; /* Aligns items to the center */
     gap: 20px; /* Space between certification cards */
     overflow-x: auto; /* Prevents overflow issues on small screens */
+    padding: 10px; /* Optional, adds spacing around the container */
 }
 
 .certification {
-    flex: 1; /* Ensures equal space distribution */
-    max-width: 320px; /* Controls width */
+    flex-shrink: 0; /* Prevents certification cards from shrinking */
+    width: 320px; /* Ensures each card stays at a fixed width */
     text-align: center;
     padding: 15px;
     border-radius: 10px;
@@ -299,7 +300,7 @@ Cloud Deployment & Monitoring</p>
 }
 
 .certification-card {
-    width: 250px;
+    width: 100%; /* Makes the card span the entire width of the certification */
     height: 150px;
     position: relative;
     transform-style: preserve-3d;
