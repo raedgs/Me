@@ -33,6 +33,70 @@
             stroke-linejoin: round;
             fill: none;
         }
+
+        /* ---------------------------------- */
+        /* --- PROFESSIONAL ANIMATIONS --- */
+        /* ---------------------------------- */
+
+        /* 1. Hero Entrance Keyframes */
+        @keyframes slide-up-fade {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Apply initial hidden state to hero elements */
+        .hero-animate {
+            opacity: 0;
+            /* Use a simple animation name for sequential calls */
+            animation-name: slide-up-fade;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+        
+        /* 2. Scroll Reveal Setup */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3. Subtle Card Glow Keyframes (Cybersecurity focus) */
+        @keyframes tech-glow {
+            0%, 100% {
+                box-shadow: 0 0 5px 0 rgba(88, 166, 255, 0.2), 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 12px 1px rgba(88, 166, 255, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            }
+        }
+        /* Apply glow to all skill cards */
+        .skill-card-glow {
+             animation: tech-glow 4s infinite ease-in-out;
+        }
+
+        /* Profile Image Spin-In */
+        .profile-animate {
+            opacity: 0;
+            transform: scale(0.5) rotate(-30deg);
+            animation: profile-entry 1s ease-out 0.4s forwards;
+        }
+        @keyframes profile-entry {
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -60,16 +124,17 @@
         <!-- HEADER / HERO SECTION -->
         <section class="flex flex-col md:flex-row items-center justify-between py-12 mb-12 border-b border-gray-700">
             <div class="order-2 md:order-1 max-w-xl mt-6 md:mt-0">
-                <p class="text-xl primary-color font-semibold mb-2">Hello, I'm</p>
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">Raed Guesmi</h1>
-                <p class="text-2xl text-gray-400 mt-2">Cybersecurity Engineer</p>
+                <!-- SEQUENCED ANIMATION: DELAYED ENTRANCE -->
+                <p class="text-xl primary-color font-semibold mb-2 hero-animate" style="animation-delay: 0.1s;">Hello, I'm</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight hero-animate" style="animation-delay: 0.3s;">Raed Guesmi</h1>
+                <p class="text-2xl text-gray-400 mt-2 hero-animate" style="animation-delay: 0.5s;">Cybersecurity Engineer</p>
 
-                <p class="mt-6 text-gray-300">
+                <p class="mt-6 text-gray-300 hero-animate" style="animation-delay: 0.7s;">
                     A dedicated Cybersecurity Engineer blending strong penetration testing skills with robust **DevSecOps** and System Administration expertise to build and secure complex IT infrastructures.
                 </p>
 
                 <!-- Social Links and CV -->
-                <div class="flex flex-wrap items-center space-x-4 mt-6">
+                <div class="flex flex-wrap items-center space-x-4 mt-6 hero-animate" style="animation-delay: 0.9s;">
                     <a href="https://github.com/yourgithub" target="_blank" class="text-gray-400 hover:text-white transition duration-200" title="GitHub">
                         <svg class="icon w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 4c0 0-1.29 0-4.01 1.21A11.45 11.45 0 0 0 12 5.89 11.42 11.42 0 0 0 8.07 5.2c-2.72-1.21-4.01-1.21-4.01-1.21A5.07 5.07 0 0 0 3.1 4.77 5.44 5.44 0 0 0 3 10.96c0 5.46 3.3 6.65 6.44 7A3.37 3.37 0 0 0 11 18.13V22"></path></svg>
                     </a>
@@ -80,27 +145,29 @@
                         <!-- Use a simplified THM icon placeholder -->
                         <div class="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-[0.6rem]">THM</div>
                     </a>
-                    <a href="Cv_Raed.Guesmii.pdf" download class="ml-6 px-4 py-2 bg-primary-color text-white font-medium rounded-lg hover:bg-blue-600 transition duration-300">
+                    <a href="Cv_Raed.Guesmii.pdf" download class="ml-6 px-4 py-2 bg-[#58a6ff] text-white font-medium rounded-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">
                         Download CV
                     </a>
                 </div>
             </div>
 
-            <!-- Profile Image Placeholder -->
-            <div class="order-1 md:order-2 w-48 h-48 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl flex-shrink-0">
-                <img src="12.png.png" alt="Raed Guesmi Profile Picture" class="w-full h-full object-cover">
+            <!-- Profile Image Placeholder with Spin-In Animation -->
+            <div class="order-1 md:order-2 w-48 h-48 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl flex-shrink-0 profile-animate">
+                <!-- Using a placeholder image for display -->
+                <img src="https://placehold.co/192x192/161b22/c9d1d9?text=R+G" onerror="this.onerror=null;this.src='https://placehold.co/192x192/161b22/c9d1d9?text=R+G';" alt="Raed Guesmi Profile Picture" class="w-full h-full object-cover">
             </div>
         </section>
 
         <!-- TECHNICAL STACK / SKILLS SECTION -->
+        <!-- This section appears immediately, but cards have a continuous glow -->
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
                 <span class="primary-color mr-3" id="icon-cpu"></span>Technical Stack
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Security Card -->
-                <div class="section-card p-6 rounded-xl">
+                <!-- Security Card: Apply skill-card-glow -->
+                <div class="section-card p-6 rounded-xl skill-card-glow">
                     <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
                         <span class="primary-color mr-2 text-2xl font-mono">#</span>Cyber Security
                     </h3>
@@ -123,8 +190,8 @@
                     </ul>
                 </div>
 
-                <!-- Systems/Cloud Card -->
-                <div class="section-card p-6 rounded-xl">
+                <!-- Systems/Cloud Card: Apply skill-card-glow -->
+                <div class="section-card p-6 rounded-xl skill-card-glow">
                     <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
                         <span class="primary-color mr-2 text-2xl font-mono">#</span>Systems & Cloud
                     </h3>
@@ -147,8 +214,8 @@
                     </ul>
                 </div>
 
-                <!-- Development/DevOps Card -->
-                <div class="section-card p-6 rounded-xl">
+                <!-- Development/DevOps Card: Apply skill-card-glow -->
+                <div class="section-card p-6 rounded-xl skill-card-glow">
                     <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
                         <span class="primary-color mr-2 text-2xl font-mono">#</span>DevOps & Development
                     </h3>
@@ -173,15 +240,15 @@
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
-        <section class="mb-16">
+        <!-- EXPERIENCE SECTION - SCROLL REVEAL -->
+        <section class="mb-16 reveal-on-scroll">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
                 <span class="primary-color mr-3" id="icon-briefcase"></span>Professional Experience
             </h2>
 
             <ol class="relative border-l border-gray-700 ml-4">
                 
-                <!-- NEW ENTRY: TiktakPro (Updated to DevSecOps) -->
+                <!-- NEW ENTRY: TiktakPro -->
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
                         <span class="font-bold text-xs">T</span>
@@ -202,8 +269,7 @@
                         <li>**Automated infrastructure provisioning** using Infrastructure as Code (IaC) and defined security baselines for all new deployments.</li>
                     </ul>
                 </li>
-                <!-- END UPDATED ENTRY -->
-
+                
                 <!-- Existing Experience 1: SFM Group -->
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
@@ -259,8 +325,8 @@
             </ol>
         </section>
 
-        <!-- PROJECTS SECTION -->
-        <section class="mb-16">
+        <!-- PROJECTS SECTION - SCROLL REVEAL -->
+        <section class="mb-16 reveal-on-scroll">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
                 <span class="primary-color mr-3" id="icon-folder-git"></span>Key Projects
             </h2>
@@ -310,8 +376,8 @@
             </div>
         </section>
 
-        <!-- CERTIFICATIONS SECTION -->
-        <section class="mb-16">
+        <!-- CERTIFICATIONS SECTION - SCROLL REVEAL -->
+        <section class="mb-16 reveal-on-scroll">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
                 <span class="primary-color mr-3" id="icon-check-square"></span>Certifications & Badges
             </h2>
@@ -360,6 +426,31 @@
         document.getElementById('icon-folder-git').innerHTML = getIcon('folder-git', 'icon w-6 h-6 primary-color');
         document.getElementById('icon-check-square').innerHTML = getIcon('check-square', 'icon w-6 h-6 primary-color');
         document.getElementById('icon-mail').innerHTML = getIcon('mail', 'icon w-5 h-5 text-gray-400');
+        
+        // --- JavaScript for Scroll Reveal Animation (High Performance) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // relative to viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is visible, trigger animation
+                        entry.target.classList.add('is-visible');
+                        // Stop observing once the animation is triggered
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Target all sections marked for scroll reveal
+            document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
 </body>
 </html>
