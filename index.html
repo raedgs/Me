@@ -1,456 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raed Guesmi - Cybersecurity Engineer Portfolio</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for dark theme and typography */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Deep Charcoal/GitHub Dark */
-            color: #c9d1d9; /* Light text for contrast */
-        }
-        .section-card {
-            background-color: #161b22; /* Slightly lighter dark background for cards */
-            border: 1px solid #30363d;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-        }
-        .primary-color { color: #58a6ff; } /* GitHub blue accent */
-        .bg-primary-dark { background-color: #58a6ff1a; } /* Light blue background for badges */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raed Guesmi | Cybersecurity Engineer</title>
 
-        /* Custom SVG for icons - simple components */
-        .icon {
-            display: inline-block;
-            width: 1.25em;
-            height: 1.25em;
-            vertical-align: text-bottom;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            fill: none;
-        }
+  <meta name="description" content="Portfolio of Raed Guesmi, Cybersecurity Engineer specialized in penetration testing, DevSecOps, and secure infrastructure." />
+  <meta name="author" content="Raed Guesmi" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b1220" />
 
-        /* ---------------------------------- */
-        /* --- PROFESSIONAL ANIMATIONS --- */
-        /* ---------------------------------- */
+  <meta property="og:title" content="Raed Guesmi | Cybersecurity Engineer" />
+  <meta property="og:description" content="Cybersecurity Engineer focused on penetration testing, DevSecOps, and resilient cloud infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://raedgs.github.io/Me/" />
+  <meta property="og:image" content="https://raedgs.github.io/Me/assets/preview.png" />
 
-        /* 1. Hero Entrance Keyframes */
-        @keyframes slide-up-fade {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Apply initial hidden state to hero elements */
-        .hero-animate {
-            opacity: 0;
-            /* Use a simple animation name for sequential calls */
-            animation-name: slide-up-fade;
-            animation-duration: 0.8s;
-            animation-timing-function: ease-out;
-            animation-fill-mode: forwards;
-        }
-        
-        /* 2. Scroll Reveal Setup */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Raed Guesmi | Cybersecurity Engineer" />
+  <meta name="twitter:description" content="Portfolio of Raed Guesmi: security engineering, pentesting, and DevSecOps." />
+  <meta name="twitter:image" content="https://raedgs.github.io/Me/assets/preview.png" />
 
-        /* 3. Subtle Card Glow Keyframes (Cybersecurity focus) */
-        @keyframes tech-glow {
-            0%, 100% {
-                box-shadow: 0 0 5px 0 rgba(88, 166, 255, 0.2), 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 12px 1px rgba(88, 166, 255, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-            }
-        }
-        /* Apply glow to all skill cards */
-        .skill-card-glow {
-             animation: tech-glow 4s infinite ease-in-out;
-        }
+  <link rel="canonical" href="https://raedgs.github.io/Me/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-        /* Profile Image Spin-In */
-        .profile-animate {
-            opacity: 0;
-            transform: scale(0.5) rotate(-30deg);
-            animation: profile-entry 1s ease-out 0.4s forwards;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: "#3b82f6",
+            bg: "#0b1220",
+            card: "#121a2b",
+            border: "#27324a"
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(0,0,0,.25)"
+          }
         }
-        @keyframes profile-entry {
-            100% {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
-        }
-    </style>
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", sans-serif; background: #0b1220; color: #e5e7eb; }
+    .glass {
+      background: rgba(18, 26, 43, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      backdrop-filter: blur(8px);
+    }
+    .section-card {
+      background: #121a2b;
+      border: 1px solid #27324a;
+      border-radius: 1rem;
+    }
+    .muted { color: #94a3b8; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all .5s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Raed Guesmi",
+    "url":"https://raedgs.github.io/Me/",
+    "jobTitle":"Cybersecurity Engineer",
+    "email":"mailto:raed.guesmi00@gmail.com",
+    "sameAs":[
+      "https://github.com/raedgs",
+      "https://www.linkedin.com/in/yourlinkedin",
+      "https://tryhackme.com/p/yourtryhackme"
+    ]
+  }
+  </script>
 </head>
-<body class="min-h-screen">
 
-    <div class="max-w-7xl mx-auto p-4 sm:p-8">
-
-        <!-- Custom SVG Icons (to avoid external libraries) -->
-        <script>
-            function getIcon(name, classes = 'icon') {
-                const svgMap = {
-                    'code': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
-                    'briefcase': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`,
-                    'zap': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`,
-                    'user': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`,
-                    'cpu': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>`,
-                    'check-square': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>`,
-                    'folder-git': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2h8.6a2 2 0 0 1 2 2v3"></path><circle cx="12" cy="18" r="3"></circle><path d="M12 15v-1"></path><path d="M12 21v-1"></path></svg>`,
-                    'graduation-cap': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><path d="M21.43 12.18v.53a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2v-.53a1 1 0 0 1 .49-.86l7.53-4.49a2 2 0 0 1 2.96 0l7.53 4.49a1 1 0 0 1 .49.86z"></path><path d="M15.42 16.5l.58 2.5a.5.5 0 0 1-.68.61l-3.32-1.33a2 2 0 0 1-1.42 0L7.68 19.61a.5.5 0 0 1-.68-.61l.58-2.5"></path><path d="M22 10.5L12 5 2 10.5"></path></svg>`,
-                    'mail': `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`,
-                };
-                return svgMap[name] || '';
-            }
-        </script>
-
-        <!-- HEADER / HERO SECTION -->
-        <section class="flex flex-col md:flex-row items-center justify-between py-12 mb-12 border-b border-gray-700">
-            <div class="order-2 md:order-1 max-w-xl mt-6 md:mt-0">
-                <!-- SEQUENCED ANIMATION: DELAYED ENTRANCE -->
-                <p class="text-xl primary-color font-semibold mb-2 hero-animate" style="animation-delay: 0.1s;">Hello, I'm</p>
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight hero-animate" style="animation-delay: 0.3s;">Raed Guesmi</h1>
-                <p class="text-2xl text-gray-400 mt-2 hero-animate" style="animation-delay: 0.5s;">Cybersecurity Engineer</p>
-
-                <p class="mt-6 text-gray-300 hero-animate" style="animation-delay: 0.7s;">
-                    A dedicated Cybersecurity Engineer blending strong penetration testing skills with robust **DevSecOps** and System Administration expertise to build and secure complex IT infrastructures.
-                </p>
-
-                <!-- Social Links and CV -->
-                <div class="flex flex-wrap items-center space-x-4 mt-6 hero-animate" style="animation-delay: 0.9s;">
-                    <a href="https://github.com/yourgithub" target="_blank" class="text-gray-400 hover:text-white transition duration-200" title="GitHub">
-                        <svg class="icon w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 4c0 0-1.29 0-4.01 1.21A11.45 11.45 0 0 0 12 5.89 11.42 11.42 0 0 0 8.07 5.2c-2.72-1.21-4.01-1.21-4.01-1.21A5.07 5.07 0 0 0 3.1 4.77 5.44 5.44 0 0 0 3 10.96c0 5.46 3.3 6.65 6.44 7A3.37 3.37 0 0 0 11 18.13V22"></path></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="text-gray-400 hover:text-white transition duration-200" title="LinkedIn">
-                        <svg class="icon w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                    <a href="https://tryhackme.com/p/yourtryhackme" target="_blank" class="text-gray-400 hover:text-white transition duration-200" title="TryHackMe">
-                        <!-- Use a simplified THM icon placeholder -->
-                        <div class="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-[0.6rem]">THM</div>
-                    </a>
-                    <a href="Cv_Raed.Guesmii.pdf" download class="ml-6 px-4 py-2 bg-[#58a6ff] text-white font-medium rounded-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">
-                        Download CV
-                    </a>
-                </div>
-            </div>
-
-            <!-- Profile Image Placeholder with Spin-In Animation -->
-            <div class="order-1 md:order-2 w-48 h-48 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl flex-shrink-0 profile-animate">
-                <!-- Using a placeholder image for display -->
-                <img src="12.png.png" onerror="this.onerror=null;this.src='https://placehold.co/192x192/161b22/c9d1d9?text=R+G';" alt="Raed Guesmi Profile Picture" class="w-full h-full object-cover">
-            </div>
-        </section>
-
-        <!-- TECHNICAL STACK / SKILLS SECTION -->
-        <!-- This section appears immediately, but cards have a continuous glow -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                <span class="primary-color mr-3" id="icon-cpu"></span>Technical Stack
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Security Card: Apply skill-card-glow -->
-                <div class="section-card p-6 rounded-xl skill-card-glow">
-                    <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
-                        <span class="primary-color mr-2 text-2xl font-mono">#</span>Cyber Security
-                    </h3>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-start">
-                             <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Penetration Testing (Web, Network, AD, Mobile)
-                        </li>
-                        <li class="flex items-start">
-                             <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Security Audits & Risk Assessments
-                        </li>
-                        <li class="flex items-start">
-                             <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Incident Response & Forensics
-                        </li>
-                        <li class="flex items-start">
-                             <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Firewall & IDS/IPS Configuration
-                        </li>
-                        <li class="flex items-start">
-                             <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Compliance (ISO 27001, NIST)
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Systems/Cloud Card: Apply skill-card-glow -->
-                <div class="section-card p-6 rounded-xl skill-card-glow">
-                    <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
-                        <span class="primary-color mr-2 text-2xl font-mono">#</span>Systems & Cloud
-                    </h3>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Linux & Windows Server Management
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Active Directory & User Management
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Virtualization (Proxmox, VMware)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Cloud Platforms (AWS, Azure)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Backup & Disaster Recovery
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Development/DevOps Card: Apply skill-card-glow -->
-                <div class="section-card p-6 rounded-xl skill-card-glow">
-                    <h3 class="text-xl font-semibold text-white mb-3 flex items-center">
-                        <span class="primary-color mr-2 text-2xl font-mono">#</span>DevOps & Development
-                    </h3>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Containerization (Docker, Kubernetes)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> CI/CD Pipelines (Jenkins, GitLab CI)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Infrastructure as Code (Terraform, Ansible)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> Backend (Python, PHP/Laravel, Spring Boot)
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2 text-lime-400 font-bold leading-5">&rsaquo;</span> MERN Stack (MongoDB, Express, React, Node)
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE SECTION - SCROLL REVEAL -->
-        <section class="mb-16 reveal-on-scroll">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                <span class="primary-color mr-3" id="icon-briefcase"></span>Professional Experience
-            </h2>
-
-            <ol class="relative border-l border-gray-700 ml-4">
-                
-                <!-- NEW ENTRY: TiktakPro -->
-                <li class="mb-10 ml-6">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
-                        <span class="font-bold text-xs">T</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold text-white">
-                        DevSecOps & Systems Engineer
-                        <!-- LINK ADDED HERE -->
-                        <a href="https://www.linkedin.com/company/tiktak-pro/" target="_blank" class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ml-3 hover:opacity-75 transition duration-200">TiktakPro</a>
-                        <span class="bg-lime-900 text-lime-300 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Current</span>
-                    </h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-500">March 2025 - Present</time>
-                    <p class="mb-4 text-base font-normal text-gray-400">
-                        Leading the integration of security practices directly into the development and deployment pipelines. This role focuses on **automating security gates, implementing advanced monitoring (SIEM)**, and maintaining **secure, highly-available infrastructure** via IaC.
-                    </p>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-gray-400">
-                        <li>**Engineered and maintained** CI/CD pipelines to automatically integrate SAST/DAST tools for continuous security validation.</li>
-                        <li>**Implemented a comprehensive SIEM** solution for real-time threat monitoring, alert correlation, and accelerated incident response.</li>
-                        <li>**Automated infrastructure provisioning** using Infrastructure as Code (IaC) and defined security baselines for all new deployments.</li>
-                    </ul>
-                </li>
-                
-                <!-- Existing Experience 1: SFM Group -->
-                <li class="mb-10 ml-6">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
-                        <span class="font-bold text-xs">S</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold text-white">
-                        Cybersecurity & System Administration Intern
-                        <!-- LINK ADDED HERE -->
-                        <a href="https://www.linkedin.com/company/groupe-sfm/" target="_blank" class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ml-3 hover:opacity-75 transition duration-200">SFM Group</a>
-                    </h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-500">February 2024 - August 2024 (6 Months)</time>
-                    <p class="mb-4 text-base font-normal text-gray-400">
-                        Worked across security and infrastructure, leading **penetration testing** (web, network, AD) to identify vulnerabilities, while also managing and **securing servers, firewalls, and system backups** as a System Administrator.
-                    </p>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-gray-400">
-                        <li>Conducted **penetration testing** on web applications and Active Directory environments.</li>
-                        <li>Performed **vulnerability assessments** and security hardening for critical servers.</li>
-                        <li>Developed and deployed a **Capture The Flag (CTF) training platform**.</li>
-                    </ul>
-                </li>
-
-                <!-- Existing Experience 2: Next Step -->
-                <li class="mb-10 ml-6">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
-                        <span class="font-bold text-xs">N</span>
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-white">
-                        Cybersecurity Analyst Internship
-                        <!-- LINK ADDED HERE -->
-                        <a href="https://www.linkedin.com/company/next-step-it/" target="_blank" class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ml-3 hover:opacity-75 transition duration-200">Next Step</a>
-                    </h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-500">May 2023 - August 2023 (3 Months)</time>
-                    <p class="text-base font-normal text-gray-400">
-                        Focused on network defense by configuring and managing firewalls, analyzing network traffic with tools like **Wireshark** to detect abnormal activity, and implementing essential security best practices.
-                    </p>
-                </li>
-
-                <!-- Existing Experience 3: Green.tech -->
-                <li class="ml-6">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-dark rounded-full -left-3 ring-8 ring-slate-900 primary-color">
-                        <span class="font-bold text-xs">G</span>
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-white">
-                        Web Developer and DevOps Intern
-                        <!-- LINK ADDED HERE -->
-                        <a href="https://www.linkedin.com/company/greentech-training/" target="_blank" class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ml-3 hover:opacity-75 transition duration-200">Green.tech</a>
-                    </h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-500">May 2023 - August 2023 (3 Months)</time>
-                    <p class="text-base font-normal text-gray-400">
-                        Developed and secured **MERN stack** web applications. Key focus on secure development practices, including implementing **MFA, input validation, and password hashing**, alongside automating deployments with **CI/CD** and managing **Docker/Kubernetes**.
-                    </p>
-                </li>
-            </ol>
-        </section>
-
-        <!-- PROJECTS SECTION - SCROLL REVEAL -->
-        <section class="mb-16 reveal-on-scroll">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                <span class="primary-color mr-3" id="icon-folder-git"></span>Key Projects
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project 1: FortiLearn -->
-                <div class="section-card p-6 rounded-xl hover:ring-2 hover:ring-blue-500 transition duration-300">
-                    <h3 class="text-xl font-semibold primary-color mb-2">Cybersecurity Platform (FortiLearn)</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        An interactive cybersecurity training platform with penetration testing challenges simulating real-world attack vectors (XSS, SQLi, Privilege Escalation).
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Node.js</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">React</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Docker</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Pentesting Tools</span>
-                    </div>
-                </div>
-
-                <!-- Project 2: Next Gen SOC -->
-                <div class="section-card p-6 rounded-xl hover:ring-2 hover:ring-blue-500 transition duration-300">
-                    <h3 class="text-xl font-semibold primary-color mb-2">Next Generation SOC for Banking</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        A comprehensive platform designed for the banking sector, integrating automated penetration testing, real-time threat detection, and security awareness modules.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Python (Flask)</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Jenkins</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Terraform</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Splunk</span>
-                    </div>
-                </div>
-
-                <!-- Project 3: DevSecOps Implementation -->
-                <div class="section-card p-6 rounded-xl hover:ring-2 hover:ring-blue-500 transition duration-300">
-                    <h3 class="text-xl font-semibold primary-color mb-2">DevSecOps Implementation</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Implemented a full DevSecOps pipeline with integrated security testing (Snyk, SonarQube) for code and infrastructure, ensuring secure software delivery from the start.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">CI/CD</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Terraform</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">Kubernetes</span>
-                        <span class="bg-primary-dark text-blue-300 px-2 py-1 rounded-full">AWS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CERTIFICATIONS SECTION - SCROLL REVEAL -->
-        <section class="mb-16 reveal-on-scroll">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                <span class="primary-color mr-3" id="icon-check-square"></span>Certifications & Badges
-            </h2>
-
-            <div class="space-y-4">
-                <div class="section-card p-4 rounded-lg flex items-center justify-between">
-                    <div>
-                        <p class="text-lg font-medium text-white">eCPPT</p>
-                        <p class="text-sm text-gray-400">eLearnSecurity Certified Professional Penetration Tester</p>
-                    </div>
-                    <a href="https://certs.ine.com/8dd75524-f315-44c4-8e19-7e0268cef492#acc.rv6opEJh" target="_blank" class="px-3 py-1 bg-blue-700 text-white text-xs rounded-full hover:bg-blue-600">Verify</a>
-                </div>
-                <div class="section-card p-4 rounded-lg flex items-center justify-between">
-                    <div>
-                        <p class="text-lg font-medium text-white">eJPT</p>
-                        <p class="text-sm text-gray-400">eLearnSecurity Junior Penetration Tester</p>
-                    </div>
-                    <a href="https://certs.ine.com/1cebe1a3-34f7-4344-af68-76af0930645c#acc.v8U5KRVW" target="_blank" class="px-3 py-1 bg-blue-700 text-white text-xs rounded-full hover:bg-blue-600">Verify</a>
-                </div>
-                <div class="section-card p-4 rounded-lg flex items-center justify-between">
-                    <div>
-                        <p class="text-lg font-medium text-white">Cisco Badges</p>
-                        <p class="text-sm text-gray-400">Ethical Hacking, CCNA, CyberOps, Network Attack, Network Defense</p>
-                    </div>
-                    <a href="https://www.credly.com/users/raed-guesmi/badges" target="_blank" class="px-3 py-1 bg-blue-700 text-white text-xs rounded-full hover:bg-blue-600">View All</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER / CONTACT -->
-        <footer class="mt-16 border-t border-gray-700 pt-8 text-center text-gray-500">
-            <p class="text-lg font-semibold text-white mb-2">Connect with Raed</p>
-            <div class="flex justify-center space-x-4 mb-4">
-                 <p class="flex items-center text-sm">
-                    <span class="text-gray-400 mr-2" id="icon-mail"></span> raed.guesmi00@gmail.com
-                </p>
-            </div>
-            <p class="text-sm">© 2025 Raed Guesmi. Designed for Professional Excellence.</p>
-        </footer>
+<body class="antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-bg/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-white tracking-tight">Raed Guesmi</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a class="hover:text-white transition" href="#about">About</a>
+        <a class="hover:text-white transition" href="#skills">Skills</a>
+        <a class="hover:text-white transition" href="#experience">Experience</a>
+        <a class="hover:text-white transition" href="#projects">Projects</a>
+        <a class="hover:text-white transition" href="#certifications">Certifications</a>
+        <a class="hover:text-white transition" href="#contact">Contact</a>
+      </nav>
+      <a href="CV_Raed_Guesmi.pdf" download class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
+        Download CV
+      </a>
     </div>
+  </header>
 
-    <script>
-        // Injecting the custom SVGs into the page using the helper function
-        document.getElementById('icon-cpu').innerHTML = getIcon('cpu', 'icon w-6 h-6 primary-color');
-        document.getElementById('icon-briefcase').innerHTML = getIcon('briefcase', 'icon w-6 h-6 primary-color');
-        document.getElementById('icon-folder-git').innerHTML = getIcon('folder-git', 'icon w-6 h-6 primary-color');
-        document.getElementById('icon-check-square').innerHTML = getIcon('check-square', 'icon w-6 h-6 primary-color');
-        document.getElementById('icon-mail').innerHTML = getIcon('mail', 'icon w-5 h-5 text-gray-400');
-        
-        // --- JavaScript for Scroll Reveal Animation (High Performance) ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null, // relative to viewport
-                rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            };
+  <main id="home" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- HERO -->
+    <section class="py-16 md:py-24 border-b border-slate-800">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-8">
+          <p class="text-brand font-semibold mb-2">Cybersecurity Engineer</p>
+          <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+            Raed Guesmi
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl">
+            I secure modern systems by combining <strong>penetration testing</strong>, <strong>DevSecOps automation</strong>, and <strong>resilient infrastructure engineering</strong>.
+            My focus is simple: reduce risk, improve security posture, and ship secure software faster.
+          </p>
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Element is visible, trigger animation
-                        entry.target.classList.add('is-visible');
-                        // Stop observing once the animation is triggered
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://github.com/raedgs" target="_blank" rel="noopener noreferrer"
+               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer"
+               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
+              LinkedIn
+            </a>
+            <a href="https://tryhackme.com/p/yourtryhackme" target="_blank" rel="noopener noreferrer"
+               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
+              TryHackMe
+            </a>
+            <a href="#contact"
+               class="rounded-lg bg-white text-slate-900 px-4 py-2 font-semibold hover:bg-slate-200 transition">
+              Contact Me
+            </a>
+          </div>
+        </div>
 
-            // Target all sections marked for scroll reveal
-            document.querySelectorAll('.reveal-on-scroll').forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+        <div class="lg:col-span-4">
+          <div class="section-card p-4 shadow-soft">
+            <img
+              src="assets/profile.jpg"
+              onerror="this.onerror=null;this.src='https://placehold.co/500x500/121a2b/e2e8f0?text=Raed+Guesmi';"
+              alt="Raed Guesmi profile picture"
+              class="w-full aspect-square object-cover rounded-xl border border-slate-700"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-14 reveal">
+      <div class="section-card p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">About</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed">
+          Cybersecurity Engineer with hands-on experience across offensive testing, defensive monitoring, and secure platform operations.
+          I work at the intersection of <strong>security engineering</strong> and <strong>DevOps</strong> to build systems that are secure by design, observable in production, and scalable under pressure.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-8 reveal">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Technical Skills</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="section-card p-6">
+          <h3 class="text-lg font-semibold text-white">Cybersecurity</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Penetration Testing (Web, Network, AD, Mobile)</li>
+            <li>Security Audits & Risk Assessments</li>
+            <li>Incident Response & Forensics</li>
+            <li>Firewall & IDS/IPS Hardening</li>
+            <li>Compliance: ISO 27001, NIST</li>
+          </ul>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-lg font-semibold text-white">Systems & Cloud</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Linux & Windows Server Administration</li>
+            <li>Active Directory & Identity Management</li>
+            <li>Virtualization (Proxmox, VMware)</li>
+            <li>AWS / Azure Fundamentals</li>
+            <li>Backup & Disaster Recovery</li>
+          </ul>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-lg font-semibold text-white">DevSecOps & Development</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Docker, Kubernetes</li>
+            <li>CI/CD (Jenkins, GitLab CI)</li>
+            <li>Terraform, Ansible</li>
+            <li>Python, PHP/Laravel, Spring Boot</li>
+            <li>MERN Stack</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Professional Experience</h2>
+
+      <div class="space-y-5">
+        <article class="section-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-xl font-semibold text-white">DevSecOps & Systems Engineer — TiktakPro</h3>
+            <span class="text-xs font-semibold rounded-full bg-green-900/50 text-green-300 px-3 py-1">Current</span>
+          </div>
+          <p class="mt-1 text-sm muted">March 2025 — Present</p>
+          <p class="mt-4 text-slate-300">
+            Leading secure SDLC integration and infrastructure hardening through automation, monitoring, and policy-based controls.
+          </p>
+          <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-300 text-sm">
+            <li>Integrated SAST/DAST gates into CI/CD pipelines for continuous security validation.</li>
+            <li>Implemented SIEM monitoring and correlation workflows to improve threat detection and response speed.</li>
+            <li>Automated infrastructure provisioning with IaC and established baseline security standards.</li>
+          </ul>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">Cybersecurity & System Administration Intern — SFM Group</h3>
+          <p class="mt-1 text-sm muted">February 2024 — August 2024 (6 months)</p>
+          <p class="mt-4 text-slate-300">
+            Delivered both offensive and defensive security tasks while supporting infrastructure operations.
+          </p>
+          <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-300 text-sm">
+            <li>Performed penetration testing on web applications and Active Directory environments.</li>
+            <li>Conducted vulnerability assessments and hardening for critical systems.</li>
+            <li>Built and deployed a Capture The Flag training platform for awareness and skills practice.</li>
+          </ul>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">Cybersecurity Analyst Intern — Next Step</h3>
+          <p class="mt-1 text-sm muted">May 2023 — August 2023 (3 months)</p>
+          <p class="mt-4 text-slate-300">
+            Focused on network defense, firewall operations, and abnormal traffic analysis with Wireshark.
+          </p>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">Web Developer & DevOps Intern — Green.tech</h3>
+          <p class="mt-1 text-sm muted">May 2023 — August 2023 (3 months)</p>
+          <p class="mt-4 text-slate-300">
+            Developed secure MERN applications and deployment pipelines with Docker/Kubernetes practices.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Selected Projects</h2>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">FortiLearn</h3>
+          <p class="mt-2 text-slate-300 text-sm">
+            Interactive cybersecurity training platform with practical attack simulation (XSS, SQLi, privilege escalation).
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Node.js</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">React</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Docker</span>
+          </div>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a href="#" class="text-brand hover:underline">Live Demo</a>
+            <a href="#" class="text-brand hover:underline">GitHub</a>
+          </div>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">Next Generation SOC for Banking</h3>
+          <p class="mt-2 text-slate-300 text-sm">
+            Security platform combining automated testing, threat detection, and awareness workflows for financial environments.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Python</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Jenkins</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Terraform</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Splunk</span>
+          </div>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a href="#" class="text-brand hover:underline">Case Study</a>
+            <a href="#" class="text-brand hover:underline">GitHub</a>
+          </div>
+        </article>
+
+        <article class="section-card p-6">
+          <h3 class="text-xl font-semibold text-white">DevSecOps Pipeline Implementation</h3>
+          <p class="mt-2 text-slate-300 text-sm">
+            End-to-end secure delivery pipeline with integrated code and infrastructure security controls.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">CI/CD</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Terraform</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Kubernetes</span>
+            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">AWS</span>
+          </div>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a href="#" class="text-brand hover:underline">Architecture</a>
+            <a href="#" class="text-brand hover:underline">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Certifications & Badges</h2>
+      <div class="space-y-4">
+        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h3 class="font-semibold text-white">eCPPT</h3>
+            <p class="text-sm muted">eLearnSecurity Certified Professional Penetration Tester</p>
+          </div>
+          <a href="https://certs.ine.com/8dd75524-f315-44c4-8e19-7e0268cef492#acc.rv6opEJh" target="_blank" rel="noopener noreferrer"
+             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
+            Verify
+          </a>
+        </article>
+
+        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h3 class="font-semibold text-white">eJPT</h3>
+            <p class="text-sm muted">eLearnSecurity Junior Penetration Tester</p>
+          </div>
+          <a href="https://certs.ine.com/1cebe1a3-34f7-4344-af68-76af0930645c#acc.v8U5KRVW" target="_blank" rel="noopener noreferrer"
+             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
+            Verify
+          </a>
+        </article>
+
+        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h3 class="font-semibold text-white">Cisco Badges</h3>
+            <p class="text-sm muted">Ethical Hacking, CCNA, CyberOps, Network Attack, Network Defense</p>
+          </div>
+          <a href="https://www.credly.com/users/raed-guesmi/badges" target="_blank" rel="noopener noreferrer"
+             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
+            View All
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-14 reveal">
+      <div class="section-card p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Contact</h2>
+        <p class="mt-3 text-slate-300">
+          Open to cybersecurity engineering, DevSecOps, and security-focused infrastructure roles.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="mailto:raed.guesmi00@gmail.com"
+             class="rounded-lg bg-white text-slate-900 px-4 py-2 font-semibold hover:bg-slate-200 transition">
+            raed.guesmi00@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer"
+             class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
+            Message on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Raed Guesmi. All rights reserved.</p>
+      <p>Built with security and clarity in mind.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle reveal animations on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
