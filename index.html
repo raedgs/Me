@@ -1,389 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raed Guesmi | Cybersecurity Engineer</title>
+﻿<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raed Guesmi — Social Media Manager</title>
+<meta name="description" content="Portfolio de Raed Guesmi, Social Media Manager : stratégie, création de contenu, community management, publicité Meta & TikTok.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b12;--bg2:#12121c;--card:#161624;--line:rgba(255,255,255,.08);--txt:#eceaf4;--mut:#9a98ad;--g:linear-gradient(135deg,#ff6a88 0%,#a855f7 50%,#6366f1 100%)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+.gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
+section{padding:110px 0}.eyebrow{font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:#c084fc;font-weight:600;margin-bottom:14px}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}.lead{color:var(--mut);max-width:640px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:50px;font-weight:600;transition:.3s}
+.btn-p{background:var(--g);color:#fff;box-shadow:0 10px 30px -8px rgba(168,85,247,.6)}.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 40px -8px rgba(168,85,247,.8)}
+.btn-o{border:1px solid var(--line)}.btn-o:hover{border-color:#a855f7;background:rgba(168,85,247,.08)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;padding:22px 0}
+nav.s{background:rgba(11,11,18,.82);backdrop-filter:blur(14px);padding:14px 0;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display';font-size:1.5rem;font-weight:700}.logo span{background:var(--g);-webkit-background-clip:text;color:transparent}
+.links{display:flex;gap:30px;list-style:none;font-size:.92rem;color:var(--mut)}.links a:hover{color:#fff}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+/* hero */
+.hero{overflow:hidden;min-height:100vh;display:flex;align-items:center;position:relative;padding-top:120px}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.35;z-index:-1;animation:fl 14s ease-in-out infinite}
+.b1{width:480px;height:480px;background:#a855f7;top:-80px;right:-100px}.b2{width:380px;height:380px;background:#ff6a88;bottom:0;left:-120px;animation-delay:-6s}
+@keyframes fl{50%{transform:translate(40px,-40px) scale(1.1)}}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);border-radius:50px;font-size:.85rem;color:var(--mut);margin-bottom:28px;background:rgba(255,255,255,.03)}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
+.hero h1{font-size:clamp(3rem,7vw,5.4rem);margin-bottom:12px}.hero .role{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:300;margin-bottom:22px}
+.hero p.lead{margin-bottom:38px}.cta{display:flex;gap:14px;flex-wrap:wrap}
+.stack{position:relative;height:520px}
+.phone{position:absolute;width:250px;height:500px;border-radius:38px;background:#0f0f18;border:8px solid #1f1f2e;box-shadow:0 40px 80px -20px rgba(0,0,0,.8);overflow:hidden}
+.ph1{left:10%;top:0;transform:rotate(-6deg);animation:bob 6s ease-in-out infinite}.ph2{right:0;top:40px;transform:rotate(5deg);animation:bob 6s ease-in-out infinite -3s}
+@keyframes bob{50%{margin-top:-14px}}
+.ph-h{display:flex;align-items:center;gap:8px;padding:14px 12px;font-size:.72rem;font-weight:600}
+.av{width:26px;height:26px;border-radius:50%;background:var(--g)}
+.ph-img{height:250px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:1.6rem;text-align:center;padding:20px;color:#fff}
+.ph-a{padding:10px 12px;font-size:.7rem;color:var(--mut)}.ph-a b{color:#fff}.ico{font-size:1rem;letter-spacing:8px;margin-bottom:6px;color:#fff}
+.ph-l{height:8px;border-radius:4px;background:#22222f;margin:8px 12px}
+/* about */
+.about-g{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:28px;background:var(--g);position:relative;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:7rem;font-weight:700;color:rgba(255,255,255,.95)}
+.portrait::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.35);border-radius:20px}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.val{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.val b{display:block;font-size:1rem;margin-bottom:4px}.val span{font-size:.85rem;color:var(--mut)}
+/* cards */
+.alt{background:var(--bg2)}.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:56px}
+.card{padding:34px;border-radius:22px;background:var(--card);border:1px solid var(--line);transition:.4s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.45)}
+.card::before{content:"";position:absolute;inset:0;background:var(--g);opacity:0;transition:.4s;z-index:0}.card:hover::before{opacity:.06}.card>*{position:relative}
+.ic{width:54px;height:54px;border-radius:14px;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:22px}
+.card h3{font-size:1.4rem;margin-bottom:10px}.card p{color:var(--mut);font-size:.95rem}
+.card ul{margin-top:14px;list-style:none;font-size:.88rem;color:var(--mut)}.card li::before{content:"→ ";color:#c084fc}
+/* tools */
+.tools{display:flex;flex-wrap:wrap;gap:14px;margin-top:50px}
+.tool{padding:14px 24px;border-radius:50px;border:1px solid var(--line);background:var(--card);font-weight:500;transition:.3s}.tool:hover{border-color:#a855f7;transform:translateY(-3px)}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:26px 50px;margin-top:56px}
+.bar label{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:8px}.bar label span{color:var(--mut)}
+.track{height:6px;border-radius:6px;background:#22222f;overflow:hidden}.fill{height:100%;width:0;background:var(--g);border-radius:6px;transition:1.6s cubic-bezier(.2,.8,.2,1)}
+/* cases */
+.case{display:grid;grid-template-columns:1fr 1.25fr;gap:50px;align-items:center;padding:44px;border-radius:28px;background:var(--card);border:1px solid var(--line);margin-top:34px}
+.case:nth-child(even) .mock{order:2}
+.tag{display:inline-block;padding:6px 14px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,106,136,.12);color:#ff8fa6;border:1px solid rgba(255,106,136,.3);margin-bottom:14px}
+.case h3{font-size:1.9rem;margin-bottom:6px}.sector{color:#c084fc;font-size:.9rem;margin-bottom:20px}
+.cs dt{font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-top:14px}.cs dd{color:var(--mut);font-size:.94rem}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.res div{padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);text-align:center}
+.res b{display:block;font-size:1.35rem;background:var(--g);-webkit-background-clip:text;color:transparent}.res span{font-size:.74rem;color:var(--mut)}
+.note{display:inline-block;font-size:.74rem;color:#9a98ad;margin-top:14px;padding:5px 12px;border-radius:50px;border:1px dashed rgba(255,255,255,.14);letter-spacing:.02em}
+.mock{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.post{border-radius:18px;background:#0f0f18;border:1px solid var(--line);overflow:hidden;font-size:.7rem}
+.post .ph-img{height:180px;font-size:1.2rem}.post.tall .ph-img{height:240px}
+.post .cap{padding:10px 12px;color:var(--mut)}.post .cap b{color:#fff}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:56px;counter-reset:s}
+.step{padding:28px 22px;border-radius:20px;background:var(--card);border:1px solid var(--line);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:'Playfair Display';font-size:2.4rem;font-weight:700;background:var(--g);-webkit-background-clip:text;color:transparent;display:block;margin-bottom:10px}
+.step h3{font-size:1.15rem;margin-bottom:8px}.step p{font-size:.86rem;color:var(--mut)}
+/* testi */
+.tq{font-family:'Playfair Display';font-style:italic;font-size:1.1rem;line-height:1.6;color:#ddd}.who{display:flex;align-items:center;gap:12px;margin-top:22px}.who b{display:block;font-size:.95rem}.who span{font-size:.8rem;color:var(--mut)}
+/* contact */
+.contact{text-align:center;border-radius:32px;padding:80px 30px;background:radial-gradient(circle at 30% 0%,rgba(168,85,247,.25),transparent 60%),radial-gradient(circle at 80% 100%,rgba(255,106,136,.2),transparent 60%),var(--card);border:1px solid var(--line)}
+.contact .lead{margin:0 auto 40px}.cinfo{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.ci{padding:16px 26px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.25);text-align:left}.ci small{display:block;color:var(--mut);font-size:.75rem}.ci b{font-weight:500}
+.ph-note{font-size:.78rem;color:#77758a;margin-top:22px}
+form{max-width:620px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,textarea,select{width:100%;padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:#fff;font:inherit}
+textarea{grid-column:1/-1;min-height:120px;resize:vertical}form .btn{grid-column:1/-1;justify-content:center;border:0;cursor:pointer;font:inherit;font-weight:600}
+input:focus,textarea:focus{outline:none;border-color:#a855f7}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:.85rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.hero-g,.about-g,.case{grid-template-columns:1fr}.case:nth-child(even) .mock{order:0}.steps{grid-template-columns:1fr 1fr}.bars{grid-template-columns:1fr}.stack{height:460px;max-width:440px;margin:auto;width:100%}
+.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#0b0b12;padding:24px;border-bottom:1px solid var(--line)}.links.open{display:flex}.burger{display:block}}
+@media(max-width:560px){section{padding:80px 0}.case{padding:24px}.res,.vals{grid-template-columns:1fr}.steps{grid-template-columns:1fr}form{grid-template-columns:1fr}.phone{width:200px;height:420px}.ph-img{height:200px;font-size:1.15rem}.ph2 .ph-img{height:260px!important}}
+.pc{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;padding:36px;border-radius:28px;background:var(--card);border:1px solid var(--line);margin-top:34px;align-items:center}
+.pc:nth-of-type(even) .pg{order:2}.pg{display:flex;gap:12px;height:330px}.pg .gi{flex:1 1 0;min-width:0;height:100%}.pg .gi.tall{flex-grow:.5625}.pg .gi[data-src$="-ad.jpg"]{flex-grow:.75}.pg .gi img{object-fit:cover;width:100%!important}
+.pc,.pc:nth-of-type(even){grid-template-columns:1fr!important;gap:30px}.pc:nth-of-type(even) .pg{order:0}.pg{height:440px!important;justify-content:center}.pi{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}.pi>.tag,.pi>h3,.pi>.sector{grid-column:1/-1}.pi>.tag{justify-self:start}.pi>h3{font-size:2rem}.pi>.cs{grid-row:span 3}.pi>.note{grid-column:1/-1}.pg .gi img{width:auto;max-width:100%;height:100%}
+.gi{position:relative;margin:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:#0f0f18;border:1px solid var(--line)}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.gi:hover img{transform:scale(1.06)}
+.gi figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;font-size:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.85));opacity:0;transition:.3s}.gi:hover figcaption{opacity:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}.chips b{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;width:100%}
+.chips span{padding:6px 12px;border-radius:50px;font-size:.78rem;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--mut)}.chips span.p{color:#c084fc;border-color:rgba(168,85,247,.35)}
+.dash{margin-top:34px;padding:36px;border-radius:28px;border:1px solid var(--line);background:var(--card);display:grid;grid-template-columns:1fr 2fr;gap:36px;align-items:center}.dash h3{font-size:1.8rem;margin-bottom:12px}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dg .gi{aspect-ratio:16/9}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:40px 0 30px}.filters button{padding:10px 22px;border-radius:50px;border:1px solid var(--line);background:var(--card);color:var(--txt);font:inherit;cursor:pointer;transition:.3s}
+.filters button.on,.filters button:hover{background:var(--g);border-color:transparent}
+.masonry{columns:4 240px;column-gap:16px}.masonry .gi{break-inside:avoid;margin-bottom:16px;display:block}.masonry .gi img{height:auto}.masonry .gi.hide{display:none}
+.lb{position:fixed;inset:0;z-index:999;background:rgba(5,5,10,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:30px}.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:80vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6)}.lb p{margin-top:16px;color:var(--mut)}
+.lb button{position:absolute;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;width:50px;height:50px;border-radius:50%;font-size:1.4rem;cursor:pointer}.lb .x{top:24px;right:24px}.lb .pv{left:24px}.lb .nx{right:24px}
+@media(max-width:960px){.pc,.dash,.pc:nth-of-type(even){grid-template-columns:1fr;padding:22px}.pc:nth-of-type(even) .pg{order:0}.pg{height:150px!important}.pi{grid-template-columns:1fr}.pi>.cs{grid-row:auto}.dg{grid-template-columns:1fr}}
+.me{position:relative;height:560px;display:flex;align-items:flex-end;justify-content:center}
+.glowc{position:absolute;width:430px;height:430px;border-radius:50%;background:var(--g);bottom:40px;left:50%;transform:translateX(-50%);box-shadow:0 0 120px rgba(168,85,247,.55)}
+.ring{position:absolute;width:500px;height:500px;border-radius:50%;border:1px dashed rgba(255,255,255,.18);bottom:5px;left:50%;transform:translateX(-50%);animation:spin 40s linear infinite}@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+.me img{position:relative;height:540px;width:auto;max-width:100%;object-fit:contain;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent);filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+.bdg{position:absolute;display:flex;gap:10px;align-items:center;padding:11px 16px;border-radius:16px;background:rgba(18,18,30,.78);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 34px rgba(0,0,0,.4);animation:bob 6s ease-in-out infinite;z-index:2;white-space:nowrap}
+.bdg b{display:block;font-size:.85rem}.bdg small{color:var(--mut);font-size:.72rem}.bi{width:34px;height:34px;border-radius:10px;background:var(--g);display:flex;align-items:center;justify-content:center}
+.b1x{top:70px;left:-10px}.b2x{top:220px;right:-20px;animation-delay:-2s}.b3x{bottom:70px;left:0;animation-delay:-4s}
+.portrait{background:linear-gradient(160deg,#2a1745,#161624 60%);overflow:hidden;align-items:flex-end;font-size:0}
+.portrait::before{content:"";position:absolute;width:85%;aspect-ratio:1;border-radius:50%;background:var(--g);opacity:.85;bottom:22%;left:7.5%;filter:blur(2px)}
+.portrait img{position:relative;width:92%;margin:0 auto;display:block;z-index:1}
+.pbadge{position:absolute;left:24px;right:24px;bottom:24px;z-index:3;padding:14px 18px;border-radius:14px;background:rgba(11,11,18,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}.pbadge b{display:block;font-size:1rem;font-family:Inter}.pbadge span{font-size:.8rem;color:var(--mut);font-family:Inter}
+@media(max-width:960px){.me{height:480px;max-width:460px;margin:auto;width:100%}.me img{height:460px}.glowc{width:340px;height:340px}.ring{width:400px;height:400px}}
+@media(max-width:560px){.me{height:400px}.me img{height:390px}.glowc{width:270px;height:270px}.ring{width:320px;height:320px}.bdg{padding:8px 12px}.bdg small{display:none}.me{margin-top:20px}.b1x{top:auto;bottom:110px;left:0}.b2x{top:auto;bottom:60px;right:0}.b3x{bottom:10px;left:10%}}
+</style></head><body>
+<nav id="nav"><div class="wrap"><a href="#" class="logo">Raed<span>.</span></a>
+<ul class="links" id="links"><li><a href="#about">À propos</a></li><li><a href="#services">Services</a></li><li><a href="#skills">Compétences</a></li><li><a href="#work">Projets</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#process">Méthode</a></li><li><a href="#contact">Contact</a></li></ul>
+<button class="burger" id="burger" aria-label="Menu">☰</button></div></nav>
 
-  <meta name="description" content="Portfolio of Raed Guesmi, Cybersecurity Engineer specialized in penetration testing, DevSecOps, and secure infrastructure." />
-  <meta name="author" content="Raed Guesmi" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b1220" />
+<header class="hero"><div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap hero-g"><div class="rv">
+<div class="pill"><span class="dot"></span>Disponible pour de nouveaux projets</div>
+<h1>Raed <span class="gt">Guesmi</span></h1>
+<div class="role">Social Media Manager</div>
+<p class="lead">Je transforme les réseaux sociaux de votre marque en un véritable levier de croissance : une stratégie claire, des contenus qui arrêtent le scroll et une communauté qui vous ressemble.</p>
+<div class="cta"><a href="#contact" class="btn btn-p">Discutons de votre projet →</a><a href="#work" class="btn btn-o">Voir les projets</a></div></div>
+<div class="me rv"><div class="ring"></div><div class="glowc"></div><img src="assets/smm/raed.png" alt="Raed Guesmi, Social Media Manager">
+<div class="bdg b1x"><span class="bi">📱</span><div><b>Social Media Manager</b><small>Instagram · TikTok · Facebook</small></div></div>
+<div class="bdg b2x"><span class="bi">🎯</span><div><b>Content Strategy</b><small>Stratégie & création</small></div></div>
+<div class="bdg b3x"><span class="bi">🚀</span><div><b>Meta & TikTok Ads</b><small>Campagnes performantes</small></div></div></div></div></header>
 
-  <meta property="og:title" content="Raed Guesmi | Cybersecurity Engineer" />
-  <meta property="og:description" content="Cybersecurity Engineer focused on penetration testing, DevSecOps, and resilient infrastructure." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://raedgs.github.io/Me/" />
-  <meta property="og:image" content="https://raedgs.github.io/Me/assets/preview.png" />
+<section id="about"><div class="wrap about-g">
+<div class="portrait rv"><img src="assets/smm/raed.png" alt="Raed Guesmi"><div class="pbadge"><b>Raed Guesmi</b><span>Social Media Manager · Tunisie</span></div></div>
+<div class="rv"><div class="eyebrow">À propos</div><h2>Créer des liens entre <span class="gt">marques et communautés</span></h2>
+<p class="lead">Je suis Raed Guesmi, Social Media Manager passionné par le storytelling digital et la performance. J'accompagne les marques — des commerces locaux aux e-commerces — dans la construction d'une présence sociale cohérente, créative et mesurable sur Instagram, Facebook, TikTok et LinkedIn.</p>
+<p class="lead" style="margin-top:14px">Mon approche allie créativité et données : chaque publication a un objectif, chaque campagne est suivie, chaque mois se termine par un rapport clair et des recommandations concrètes.</p>
+<div class="vals"><div class="val"><b>Stratégie</b><span>Des objectifs clairs avant tout contenu</span></div><div class="val"><b>Créativité</b><span>Des visuels et vidéos qui captent l'attention</span></div><div class="val"><b>Résultats</b><span>Un suivi précis des KPIs</span></div></div></div>
+</div></section>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Raed Guesmi | Cybersecurity Engineer" />
-  <meta name="twitter:description" content="Portfolio of Raed Guesmi: security engineering, pentesting, and DevSecOps." />
-  <meta name="twitter:image" content="https://raedgs.github.io/Me/assets/preview.png" />
+<section id="services" class="alt"><div class="wrap"><div class="rv"><div class="eyebrow">Services</div><h2>Ce que je fais <span class="gt">pour vous</span></h2><p class="lead">Une offre complète pour gérer vos réseaux sociaux de A à Z, ou un accompagnement ciblé selon vos besoins.</p></div>
+<div class="grid3">
+<div class="card rv"><div class="ic">🎯</div><h3>Stratégie social media</h3><p>Audit, positionnement, personas et ligne éditoriale alignés sur vos objectifs business.</p><ul><li>Audit de présence</li><li>Calendrier éditorial</li><li>Charte de ton</li></ul></div>
+<div class="card rv"><div class="ic">🎨</div><h3>Création de contenu</h3><p>Visuels, carrousels, Reels et TikToks pensés pour chaque plateforme et chaque format.</p><ul><li>Design & motion</li><li>Montage vidéo court</li><li>Copywriting</li></ul></div>
+<div class="card rv"><div class="ic">💬</div><h3>Community management</h3><p>Animation quotidienne, modération et réponses pour créer une relation authentique avec votre audience.</p><ul><li>Gestion des messages</li><li>Jeux-concours</li><li>Collaborations influenceurs</li></ul></div>
+<div class="card rv"><div class="ic">🚀</div><h3>Publicité Meta & TikTok</h3><p>Campagnes payantes ciblées pour la notoriété, le trafic, les leads ou les ventes.</p><ul><li>Ciblage & audiences</li><li>A/B testing créatifs</li><li>Optimisation du budget</li></ul></div>
+<div class="card rv"><div class="ic">📊</div><h3>Analytics & reporting</h3><p>Suivi des performances et rapports mensuels lisibles avec recommandations actionnables.</p><ul><li>Tableaux de bord</li><li>Analyse des KPIs</li><li>Veille concurrentielle</li></ul></div>
+<div class="card rv"><div class="ic">✨</div><h3>Formation & conseil</h3><p>Sessions pour rendre vos équipes autonomes sur les bonnes pratiques et les outils.</p><ul><li>Ateliers sur mesure</li><li>Guides pratiques</li><li>Accompagnement continu</li></ul></div>
+</div></div></section>
 
-  <link rel="canonical" href="https://raedgs.github.io/Me/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<section id="skills"><div class="wrap"><div class="rv"><div class="eyebrow">Compétences & outils</div><h2>Ma <span class="gt">boîte à outils</span></h2><p class="lead">Les outils que j'utilise au quotidien pour planifier, créer, publier et mesurer.</p></div>
+<div class="tools rv"><span class="tool">Meta Business Suite</span><span class="tool">Meta Ads Manager</span><span class="tool">TikTok Ads Manager</span><span class="tool">Canva</span><span class="tool">CapCut</span><span class="tool">Adobe Photoshop</span><span class="tool">Adobe Premiere Pro</span><span class="tool">Later</span><span class="tool">Hootsuite</span><span class="tool">Google Analytics 4</span><span class="tool">Looker Studio</span><span class="tool">Notion</span><span class="tool">ChatGPT</span></div>
+<div class="bars rv">
+<div class="bar"><label>Stratégie de contenu<span>Expert</span></label><div class="track"><div class="fill" data-w="95"></div></div></div>
+<div class="bar"><label>Création visuelle (Canva, Photoshop)<span>Avancé</span></label><div class="track"><div class="fill" data-w="90"></div></div></div>
+<div class="bar"><label>Montage vidéo court (CapCut, Premiere)<span>Avancé</span></label><div class="track"><div class="fill" data-w="88"></div></div></div>
+<div class="bar"><label>Publicité Meta & TikTok<span>Avancé</span></label><div class="track"><div class="fill" data-w="85"></div></div></div>
+<div class="bar"><label>Community management<span>Expert</span></label><div class="track"><div class="fill" data-w="95"></div></div></div>
+<div class="bar"><label>Analytics & reporting<span>Avancé</span></label><div class="track"><div class="fill" data-w="85"></div></div></div>
+</div></div></section>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: "#3b82f6",
-            bg: "#0b1220",
-            card: "#121a2b",
-            border: "#27324a"
-          },
-          boxShadow: {
-            soft: "0 10px 30px rgba(0,0,0,.25)"
-          }
-        }
-      }
-    };
-  </script>
+<section id="work" class="alt"><div class="wrap"><div class="rv"><div class="eyebrow">Portfolio</div><h2>Études de cas <span class="gt">exemples</span></h2><p class="lead">Des <b>exemples de projets</b> réalisés pour illustrer ma méthode : marques fictives, visuels conçus comme de vraies campagnes, chiffres d'exemple. Cliquez sur un visuel pour l'agrandir.</p></div><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/cafe-post.jpg" data-cap="Café Yasmine — Post Instagram"><img src="assets/smm/cafe-post.jpg" alt="Café Yasmine — Post Instagram" loading="lazy"><figcaption>Post Instagram</figcaption></figure><figure class="gi tall" data-src="assets/smm/cafe-story.jpg" data-cap="Café Yasmine — Story · Lancement produit"><img src="assets/smm/cafe-story.jpg" alt="Café Yasmine — Story · Lancement produit" loading="lazy"><figcaption>Story · Lancement produit</figcaption></figure><figure class="gi " data-src="assets/smm/cafe-ad.jpg" data-cap="Café Yasmine — Publicité · Offre week-end"><img src="assets/smm/cafe-ad.jpg" alt="Café Yasmine — Publicité · Offre week-end" loading="lazy"><figcaption>Publicité · Offre week-end</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Café Yasmine</h3><div class="sector">Café de quartier · Sidi Bou Saïd (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Un café apprécié localement mais invisible en ligne, avec une clientèle surtout de passage.</dd><dt>Stratégie</dt><dd>Identité bleu & blanc, Reels « coulisses » du barista, UGC clients, publicités géolocalisées pour touristes et étudiants.</dd></dl>
+<div class="chips"><b>Livrables</b><span>12 posts / mois</span><span>8 Reels</span><span>Stories quotidiennes</span><span>Campagne locale Meta</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>Facebook</span><span class=p>TikTok</span></div>
+<div class="res"><div><b>+68 %</b><span>Engagement moyen</span></div><div><b>+4 200</b><span>Abonnés en 6 mois</span></div><div><b>+31 %</b><span>Visites en semaine</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/nour-post.jpg" data-cap="Maison Nour — Post · Collection Été"><img src="assets/smm/nour-post.jpg" alt="Maison Nour — Post · Collection Été" loading="lazy"><figcaption>Post · Collection Été</figcaption></figure><figure class="gi " data-src="assets/smm/nour-carousel.jpg" data-cap="Maison Nour — Carrousel · 3 looks"><img src="assets/smm/nour-carousel.jpg" alt="Maison Nour — Carrousel · 3 looks" loading="lazy"><figcaption>Carrousel · 3 looks</figcaption></figure><figure class="gi tall" data-src="assets/smm/nour-story.jpg" data-cap="Maison Nour — Story Ad · Nouvelle collection"><img src="assets/smm/nour-story.jpg" alt="Maison Nour — Story Ad · Nouvelle collection" loading="lazy"><figcaption>Story Ad · Nouvelle collection</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Maison Nour</h3><div class="sector">Marque de mode féminine (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Lancer une nouvelle collection et convertir l'audience Instagram en ventes sur le site.</dd><dt>Stratégie</dt><dd>Teasing en 3 temps, micro-influenceuses, carrousels lookbook, Meta Ads catalogue + retargeting.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Lookbook carrousel</span><span>Reels GRWM</span><span>Stories shoppables</span><span>Ads catalogue</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>Facebook</span><span class=p>Pinterest</span></div>
+<div class="res"><div><b>x3,2</b><span>ROAS campagnes</span></div><div><b>+57 %</b><span>Trafic site</span></div><div><b>-28 %</b><span>Coût par clic</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/gym-post.jpg" data-cap="IronFit Gym — Post · Challenge"><img src="assets/smm/gym-post.jpg" alt="IronFit Gym — Post · Challenge" loading="lazy"><figcaption>Post · Challenge</figcaption></figure><figure class="gi tall" data-src="assets/smm/gym-reel.jpg" data-cap="IronFit Gym — Couverture Reel · HIIT"><img src="assets/smm/gym-reel.jpg" alt="IronFit Gym — Couverture Reel · HIIT" loading="lazy"><figcaption>Couverture Reel · HIIT</figcaption></figure><figure class="gi " data-src="assets/smm/gym-ad.jpg" data-cap="IronFit Gym — Ad leads · Essai offert"><img src="assets/smm/gym-ad.jpg" alt="IronFit Gym — Ad leads · Essai offert" loading="lazy"><figcaption>Ad leads · Essai offert</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>IronFit Gym</h3><div class="sector">Salle de sport (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Augmenter les inscriptions à la rentrée face à une forte concurrence locale.</dd><dt>Stratégie</dt><dd>Challenge 30 jours sur TikTok & Instagram, contenus coachs, campagne leads avec séance d'essai offerte.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Challenge 30 jours</span><span>Reels & TikToks</span><span>Ads génération de leads</span><span>Contenus coachs</span></div><div class="chips"><b>Plateformes</b><span class=p>TikTok</span><span class=p>Instagram</span><span class=p>Facebook</span></div>
+<div class="res"><div><b>+240</b><span>Leads en 1 mois</span></div><div><b>-35 %</b><span>Coût par lead</span></div><div><b>+22 %</b><span>Inscriptions</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/dar-post.jpg" data-cap="Dar El Jasmin — Post · Plat signature"><img src="assets/smm/dar-post.jpg" alt="Dar El Jasmin — Post · Plat signature" loading="lazy"><figcaption>Post · Plat signature</figcaption></figure><figure class="gi tall" data-src="assets/smm/dar-reel.jpg" data-cap="Dar El Jasmin — Couverture Reel · Chef"><img src="assets/smm/dar-reel.jpg" alt="Dar El Jasmin — Couverture Reel · Chef" loading="lazy"><figcaption>Couverture Reel · Chef</figcaption></figure><figure class="gi " data-src="assets/smm/dar-ad.jpg" data-cap="Dar El Jasmin — Ad · Soirée tunisienne"><img src="assets/smm/dar-ad.jpg" alt="Dar El Jasmin — Ad · Soirée tunisienne" loading="lazy"><figcaption>Ad · Soirée tunisienne</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Dar El Jasmin</h3><div class="sector">Restaurant traditionnel tunisien (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Remplir les soirées en semaine et toucher une clientèle plus jeune.</dd><dt>Stratégie</dt><dd>Série vidéo « En cuisine avec le chef », menus thématiques, food bloggers, publicités locales orientées réservation.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Shooting culinaire</span><span>Série Reels chef</span><span>Ads réservation</span><span>Partenariats food</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>Facebook</span><span class=p>TikTok</span></div>
+<div class="res"><div><b>+45 %</b><span>Réservations</span></div><div><b>1,2 M</b><span>Vues Reels</span></div><div><b>+3 800</b><span>Abonnés</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/glow-post.jpg" data-cap="GlowBox — Post · Routine glow"><img src="assets/smm/glow-post.jpg" alt="GlowBox — Post · Routine glow" loading="lazy"><figcaption>Post · Routine glow</figcaption></figure><figure class="gi tall" data-src="assets/smm/glow-story.jpg" data-cap="GlowBox — Story UGC · Unboxing"><img src="assets/smm/glow-story.jpg" alt="GlowBox — Story UGC · Unboxing" loading="lazy"><figcaption>Story UGC · Unboxing</figcaption></figure><figure class="gi " data-src="assets/smm/glow-ad.jpg" data-cap="GlowBox — Ad · Black Friday"><img src="assets/smm/glow-ad.jpg" alt="GlowBox — Ad · Black Friday" loading="lazy"><figcaption>Ad · Black Friday</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>GlowBox</h3><div class="sector">E-commerce beauté & cosmétiques (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Réduire le coût d'acquisition et augmenter les ventes lors des temps forts.</dd><dt>Stratégie</dt><dd>UGC & unboxing, tests créatifs Meta/TikTok Ads, retargeting et suivi des conversions via GA4.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Packshots produits</span><span>Stories UGC</span><span>Ads Black Friday</span><span>Reporting GA4</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>TikTok</span><span class=p>Meta Ads</span></div>
+<div class="res"><div><b>-35 %</b><span>CPA</span></div><div><b>x4,1</b><span>ROAS Black Friday</span></div><div><b>+62 %</b><span>Conversions</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/parfum-post.jpg" data-cap="Ambre de Carthage — Post · L'essence de Carthage"><img src="assets/smm/parfum-post.jpg" alt="Ambre de Carthage — Post · L'essence de Carthage" loading="lazy"><figcaption>Post · L'essence de Carthage</figcaption></figure><figure class="gi tall" data-src="assets/smm/parfum-reel.jpg" data-cap="Ambre de Carthage — Couverture Reel · Parfum signature"><img src="assets/smm/parfum-reel.jpg" alt="Ambre de Carthage — Couverture Reel · Parfum signature" loading="lazy"><figcaption>Couverture Reel · Parfum signature</figcaption></figure><figure class="gi " data-src="assets/smm/parfum-ad.jpg" data-cap="Ambre de Carthage — Ad · Coffret Fête des mères"><img src="assets/smm/parfum-ad.jpg" alt="Ambre de Carthage — Ad · Coffret Fête des mères" loading="lazy"><figcaption>Ad · Coffret Fête des mères</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Ambre de Carthage</h3><div class="sector">Parfumerie de niche (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Se démarquer face aux grandes marques internationales et booster les ventes lors des fêtes.</dd><dt>Stratégie</dt><dd>Univers luxe noir & or, Reels « parfum signature », quiz olfactif en story, campagnes Meta coffrets cadeaux avant la Fête des mères.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Shooting produit</span><span>Reels olfactifs</span><span>Stories quiz</span><span>Ads coffrets</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>TikTok</span><span class=p>Meta Ads</span></div>
+<div class="res"><div><b>x3,6</b><span>ROAS Fête des mères</span></div><div><b>+5 100</b><span>Abonnés</span></div><div><b>+48 %</b><span>Ventes coffrets</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/auto-post.jpg" data-cap="Medina Auto — Post · Nouveau SUV"><img src="assets/smm/auto-post.jpg" alt="Medina Auto — Post · Nouveau SUV" loading="lazy"><figcaption>Post · Nouveau SUV</figcaption></figure><figure class="gi tall" data-src="assets/smm/auto-reel.jpg" data-cap="Medina Auto — Couverture Reel · Essai routier"><img src="assets/smm/auto-reel.jpg" alt="Medina Auto — Couverture Reel · Essai routier" loading="lazy"><figcaption>Couverture Reel · Essai routier</figcaption></figure><figure class="gi " data-src="assets/smm/auto-ad.jpg" data-cap="Medina Auto — Lead Ad · Financement"><img src="assets/smm/auto-ad.jpg" alt="Medina Auto — Lead Ad · Financement" loading="lazy"><figcaption>Lead Ad · Financement</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Medina Auto</h3><div class="sector">Concession automobile · Tunis, Sfax, Sousse (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Générer des demandes d'essai qualifiées et réduire le coût par lead dans un marché très concurrentiel.</dd><dt>Stratégie</dt><dd>Reels essais routiers, présentation des nouveautés en showroom, formulaires instantanés Meta et retargeting des visiteurs du site.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Reels essais</span><span>Posts nouveautés</span><span>Lead Ads</span><span>Retargeting</span></div><div class="chips"><b>Plateformes</b><span class=p>Facebook</span><span class=p>Instagram</span><span class=p>YouTube</span></div>
+<div class="res"><div><b>+310</b><span>Demandes d'essai</span></div><div><b>-41 %</b><span>Coût par lead</span></div><div><b>850 K</b><span>Vues vidéos</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/immo-post.jpg" data-cap="Dar Sakan Immobilier — Post · Villa Hammamet"><img src="assets/smm/immo-post.jpg" alt="Dar Sakan Immobilier — Post · Villa Hammamet" loading="lazy"><figcaption>Post · Villa Hammamet</figcaption></figure><figure class="gi tall" data-src="assets/smm/immo-story.jpg" data-cap="Dar Sakan Immobilier — Story · Visite virtuelle"><img src="assets/smm/immo-story.jpg" alt="Dar Sakan Immobilier — Story · Visite virtuelle" loading="lazy"><figcaption>Story · Visite virtuelle</figcaption></figure><figure class="gi " data-src="assets/smm/immo-ad.jpg" data-cap="Dar Sakan Immobilier — Ad · Nouvelle résidence"><img src="assets/smm/immo-ad.jpg" alt="Dar Sakan Immobilier — Ad · Nouvelle résidence" loading="lazy"><figcaption>Ad · Nouvelle résidence</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Dar Sakan Immobilier</h3><div class="sector">Agence & promotion immobilière (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Commercialiser une nouvelle résidence et générer des visites auprès des Tunisiens résidents et à l'étranger.</dd><dt>Stratégie</dt><dd>Fiches biens premium, visites virtuelles en story, ciblage de la diaspora (France, Allemagne, Canada), Lead Ads brochure.</dd></dl>
+<div class="chips"><b>Livrables</b><span>Posts biens</span><span>Stories visite virtuelle</span><span>Lead Ads brochure</span><span>Ciblage diaspora</span></div><div class="chips"><b>Plateformes</b><span class=p>Facebook</span><span class=p>Instagram</span><span class=p>LinkedIn</span></div>
+<div class="res"><div><b>+180</b><span>Leads qualifiés</span></div><div><b>-30 %</b><span>Coût par lead</span></div><div><b>27 %</b><span>Leads diaspora</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><article class="pc rv"><div class="pg"><figure class="gi " data-src="assets/smm/patis-post.jpg" data-cap="Pâtisserie Zahra — Post · Douceurs de l'Aïd"><img src="assets/smm/patis-post.jpg" alt="Pâtisserie Zahra — Post · Douceurs de l'Aïd" loading="lazy"><figcaption>Post · Douceurs de l'Aïd</figcaption></figure><figure class="gi tall" data-src="assets/smm/patis-reel.jpg" data-cap="Pâtisserie Zahra — Couverture Reel · Coulisses"><img src="assets/smm/patis-reel.jpg" alt="Pâtisserie Zahra — Couverture Reel · Coulisses" loading="lazy"><figcaption>Couverture Reel · Coulisses</figcaption></figure><figure class="gi " data-src="assets/smm/patis-ad.jpg" data-cap="Pâtisserie Zahra — Ad · Plateaux de fêtes"><img src="assets/smm/patis-ad.jpg" alt="Pâtisserie Zahra — Ad · Plateaux de fêtes" loading="lazy"><figcaption>Ad · Plateaux de fêtes</figcaption></figure></div><div class="pi"><span class="tag">Exemple de projet</span><h3>Pâtisserie Zahra</h3><div class="sector">Pâtisserie traditionnelle & moderne (marque fictive)</div>
+<dl class="cs"><dt>Défi</dt><dd>Augmenter les commandes en ligne pour l'Aïd, les mariages et les fêtes, au-delà des clients de la boutique.</dd><dt>Stratégie</dt><dd>Food photography premium, Reels coulisses, calendrier de commandes saisonnier, ads « Commander sur WhatsApp ».</dd></dl>
+<div class="chips"><b>Livrables</b><span>Shooting pâtisserie</span><span>Reels coulisses</span><span>Ads WhatsApp</span><span>Calendrier saisonnier</span></div><div class="chips"><b>Plateformes</b><span class=p>Instagram</span><span class=p>Facebook</span><span class=p>TikTok</span></div>
+<div class="res"><div><b>+70 %</b><span>Commandes WhatsApp</span></div><div><b>+6 300</b><span>Abonnés</span></div><div><b>x2,8</b><span>ROAS saison Aïd</span></div></div><p class="note">ⓘ Chiffres d'exemple — à remplacer par vos résultats réels</p></div></article><div class="dash rv"><div><span class="tag">Exemple de reporting</span><h3>Analytics & reporting</h3><p class="lead">Chaque mois : un rapport Meta Ads clair (portée, CTR, coût par résultat, ROAS, budget en TND) et des recommandations concrètes. Maquettes d'exemple, données fictives.</p></div><div class="dg"><figure class="gi" data-src="assets/smm/dashboard-1.jpg" data-cap="Exemple — Rapport Meta Ads mensuel (TND)"><img src="assets/smm/dashboard-1.jpg" alt="Exemple de rapport Meta Ads" loading="lazy"></figure><figure class="gi" data-src="assets/smm/dashboard-2.jpg" data-cap="Exemple — Rapport Meta Ads : performance des campagnes"><img src="assets/smm/dashboard-2.jpg" alt="Exemple de rapport Meta Ads — campagnes" loading="lazy"></figure></div></div></div></section>
+<section id="galerie"><div class="wrap"><div class="rv"><div class="eyebrow">Galerie</div><h2>Galerie de <span class="gt">créations</span></h2><p class="lead">Une sélection de visuels d'exemple : posts, stories, publicités et couvertures de Reels.</p></div>
+<div class="filters rv"><button class="on" data-f="all">Tous</button><button data-f="Post">Posts</button><button data-f="Story">Stories</button><button data-f="Ad">Ads</button><button data-f="Reel">Reels covers</button></div><div class="masonry"><figure class="gi " data-cat="Post" data-src="assets/smm/cafe-post.jpg" data-cap="Café Yasmine — Post Instagram"><img src="assets/smm/cafe-post.jpg" alt="Café Yasmine — Post Instagram" loading="lazy"><figcaption><b>Café Yasmine</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Story" data-src="assets/smm/cafe-story.jpg" data-cap="Café Yasmine — Story · Lancement produit"><img src="assets/smm/cafe-story.jpg" alt="Café Yasmine — Story · Lancement produit" loading="lazy"><figcaption><b>Café Yasmine</b> · Story</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/cafe-ad.jpg" data-cap="Café Yasmine — Publicité · Offre week-end"><img src="assets/smm/cafe-ad.jpg" alt="Café Yasmine — Publicité · Offre week-end" loading="lazy"><figcaption><b>Café Yasmine</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/nour-post.jpg" data-cap="Maison Nour — Post · Collection Été"><img src="assets/smm/nour-post.jpg" alt="Maison Nour — Post · Collection Été" loading="lazy"><figcaption><b>Maison Nour</b> · Post</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/nour-carousel.jpg" data-cap="Maison Nour — Carrousel · 3 looks"><img src="assets/smm/nour-carousel.jpg" alt="Maison Nour — Carrousel · 3 looks" loading="lazy"><figcaption><b>Maison Nour</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Story" data-src="assets/smm/nour-story.jpg" data-cap="Maison Nour — Story Ad · Nouvelle collection"><img src="assets/smm/nour-story.jpg" alt="Maison Nour — Story Ad · Nouvelle collection" loading="lazy"><figcaption><b>Maison Nour</b> · Story</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/gym-post.jpg" data-cap="IronFit Gym — Post · Challenge"><img src="assets/smm/gym-post.jpg" alt="IronFit Gym — Post · Challenge" loading="lazy"><figcaption><b>IronFit Gym</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Reel" data-src="assets/smm/gym-reel.jpg" data-cap="IronFit Gym — Couverture Reel · HIIT"><img src="assets/smm/gym-reel.jpg" alt="IronFit Gym — Couverture Reel · HIIT" loading="lazy"><figcaption><b>IronFit Gym</b> · Reel</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/gym-ad.jpg" data-cap="IronFit Gym — Ad leads · Essai offert"><img src="assets/smm/gym-ad.jpg" alt="IronFit Gym — Ad leads · Essai offert" loading="lazy"><figcaption><b>IronFit Gym</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/dar-post.jpg" data-cap="Dar El Jasmin — Post · Plat signature"><img src="assets/smm/dar-post.jpg" alt="Dar El Jasmin — Post · Plat signature" loading="lazy"><figcaption><b>Dar El Jasmin</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Reel" data-src="assets/smm/dar-reel.jpg" data-cap="Dar El Jasmin — Couverture Reel · Chef"><img src="assets/smm/dar-reel.jpg" alt="Dar El Jasmin — Couverture Reel · Chef" loading="lazy"><figcaption><b>Dar El Jasmin</b> · Reel</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/dar-ad.jpg" data-cap="Dar El Jasmin — Ad · Soirée tunisienne"><img src="assets/smm/dar-ad.jpg" alt="Dar El Jasmin — Ad · Soirée tunisienne" loading="lazy"><figcaption><b>Dar El Jasmin</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/glow-post.jpg" data-cap="GlowBox — Post · Routine glow"><img src="assets/smm/glow-post.jpg" alt="GlowBox — Post · Routine glow" loading="lazy"><figcaption><b>GlowBox</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Story" data-src="assets/smm/glow-story.jpg" data-cap="GlowBox — Story UGC · Unboxing"><img src="assets/smm/glow-story.jpg" alt="GlowBox — Story UGC · Unboxing" loading="lazy"><figcaption><b>GlowBox</b> · Story</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/glow-ad.jpg" data-cap="GlowBox — Ad · Black Friday"><img src="assets/smm/glow-ad.jpg" alt="GlowBox — Ad · Black Friday" loading="lazy"><figcaption><b>GlowBox</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/parfum-post.jpg" data-cap="Ambre de Carthage — Post · L'essence de Carthage"><img src="assets/smm/parfum-post.jpg" alt="Ambre de Carthage — Post · L'essence de Carthage" loading="lazy"><figcaption><b>Ambre de Carthage</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Reel" data-src="assets/smm/parfum-reel.jpg" data-cap="Ambre de Carthage — Couverture Reel · Parfum signature"><img src="assets/smm/parfum-reel.jpg" alt="Ambre de Carthage — Couverture Reel · Parfum signature" loading="lazy"><figcaption><b>Ambre de Carthage</b> · Reel</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/parfum-ad.jpg" data-cap="Ambre de Carthage — Ad · Coffret Fête des mères"><img src="assets/smm/parfum-ad.jpg" alt="Ambre de Carthage — Ad · Coffret Fête des mères" loading="lazy"><figcaption><b>Ambre de Carthage</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/auto-post.jpg" data-cap="Medina Auto — Post · Nouveau SUV"><img src="assets/smm/auto-post.jpg" alt="Medina Auto — Post · Nouveau SUV" loading="lazy"><figcaption><b>Medina Auto</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Reel" data-src="assets/smm/auto-reel.jpg" data-cap="Medina Auto — Couverture Reel · Essai routier"><img src="assets/smm/auto-reel.jpg" alt="Medina Auto — Couverture Reel · Essai routier" loading="lazy"><figcaption><b>Medina Auto</b> · Reel</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/auto-ad.jpg" data-cap="Medina Auto — Lead Ad · Financement"><img src="assets/smm/auto-ad.jpg" alt="Medina Auto — Lead Ad · Financement" loading="lazy"><figcaption><b>Medina Auto</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/immo-post.jpg" data-cap="Dar Sakan Immobilier — Post · Villa Hammamet"><img src="assets/smm/immo-post.jpg" alt="Dar Sakan Immobilier — Post · Villa Hammamet" loading="lazy"><figcaption><b>Dar Sakan Immobilier</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Story" data-src="assets/smm/immo-story.jpg" data-cap="Dar Sakan Immobilier — Story · Visite virtuelle"><img src="assets/smm/immo-story.jpg" alt="Dar Sakan Immobilier — Story · Visite virtuelle" loading="lazy"><figcaption><b>Dar Sakan Immobilier</b> · Story</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/immo-ad.jpg" data-cap="Dar Sakan Immobilier — Ad · Nouvelle résidence"><img src="assets/smm/immo-ad.jpg" alt="Dar Sakan Immobilier — Ad · Nouvelle résidence" loading="lazy"><figcaption><b>Dar Sakan Immobilier</b> · Ad</figcaption></figure><figure class="gi " data-cat="Post" data-src="assets/smm/patis-post.jpg" data-cap="Pâtisserie Zahra — Post · Douceurs de l'Aïd"><img src="assets/smm/patis-post.jpg" alt="Pâtisserie Zahra — Post · Douceurs de l'Aïd" loading="lazy"><figcaption><b>Pâtisserie Zahra</b> · Post</figcaption></figure><figure class="gi tall" data-cat="Reel" data-src="assets/smm/patis-reel.jpg" data-cap="Pâtisserie Zahra — Couverture Reel · Coulisses"><img src="assets/smm/patis-reel.jpg" alt="Pâtisserie Zahra — Couverture Reel · Coulisses" loading="lazy"><figcaption><b>Pâtisserie Zahra</b> · Reel</figcaption></figure><figure class="gi " data-cat="Ad" data-src="assets/smm/patis-ad.jpg" data-cap="Pâtisserie Zahra — Ad · Plateaux de fêtes"><img src="assets/smm/patis-ad.jpg" alt="Pâtisserie Zahra — Ad · Plateaux de fêtes" loading="lazy"><figcaption><b>Pâtisserie Zahra</b> · Ad</figcaption></figure></div></div></section>
+<section id="process"><div class="wrap"><div class="rv"><div class="eyebrow">Méthode</div><h2>Un processus <span class="gt">clair et efficace</span></h2><p class="lead">Cinq étapes pour passer d'une présence dispersée à une stratégie performante.</p></div>
+<div class="steps"><div class="step rv"><h3>Découverte</h3><p>Échange sur vos objectifs, votre cible et votre univers de marque.</p></div><div class="step rv"><h3>Audit</h3><p>Analyse de vos comptes, de la concurrence et des opportunités.</p></div><div class="step rv"><h3>Stratégie</h3><p>Ligne éditoriale, plan de contenu et plan média.</p></div><div class="step rv"><h3>Exécution</h3><p>Création, publication, animation et campagnes payantes.</p></div><div class="step rv"><h3>Analyse</h3><p>Reporting mensuel et optimisation continue.</p></div></div></div></section>
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: "Inter", sans-serif; background: #0b1220; color: #e5e7eb; }
-    .section-card {
-      background: #121a2b;
-      border: 1px solid #27324a;
-      border-radius: 1rem;
-    }
-    .muted { color: #94a3b8; }
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: all .5s ease;
-    }
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+<section class="alt"><div class="wrap"><div class="rv"><div class="eyebrow">Témoignages</div><h2>Ce qu'ils <span class="gt">pourraient dire</span></h2><p class="lead">Témoignages présentés à titre d'<b>exemple</b> — clients fictifs.</p></div>
+<div class="grid3">
+<div class="card rv"><span class="tag">Exemple</span><p class="tq">« Raed a donné une vraie personnalité à notre café sur Instagram. Nos clients nous parlent de nos vidéos ! »</p><div class="who"><span class="av" style="width:42px;height:42px"></span><div><b>Gérant — Café Yasmine</b><span>Client fictif</span></div></div></div>
+<div class="card rv"><span class="tag">Exemple</span><p class="tq">« Une stratégie claire, des contenus soignés et des rapports faciles à comprendre. Un vrai partenaire. »</p><div class="who"><span class="av" style="width:42px;height:42px"></span><div><b>Fondatrice — Maison Nour</b><span>Cliente fictive</span></div></div></div>
+<div class="card rv"><span class="tag">Exemple</span><p class="tq">« Nos campagnes TikTok sont enfin rentables. Raed teste, mesure et optimise en permanence. »</p><div class="who"><span class="av" style="width:42px;height:42px"></span><div><b>Responsable marketing — GlowBox</b><span>Client fictif</span></div></div></div>
+</div></div></section>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Raed Guesmi",
-    "url":"https://raedgs.github.io/Me/",
-    "jobTitle":"Cybersecurity Engineer",
-    "email":"mailto:raed.guesmi00@gmail.com",
-    "sameAs":[
-      "https://github.com/yourgithub",
-      "https://www.linkedin.com/in/yourlinkedin",
-      "https://tryhackme.com/p/yourtryhackme"
-    ]
-  }
-  </script>
-</head>
+<section id="contact"><div class="wrap"><div class="contact rv"><div class="eyebrow">Contact</div><h2>Prêt à faire <span class="gt">briller votre marque</span> ?</h2><p class="lead">Parlez-moi de votre projet : je vous réponds sous 24 h avec une première proposition.</p>
+<div class="cinfo"><div class="ci"><small>Email (à remplacer)</small><b>votre.email@exemple.com</b></div><div class="ci"><small>Téléphone (à remplacer)</small><b>+216 XX XXX XXX</b></div><div class="ci"><small>Localisation</small><b>Tunisie · À distance</b></div></div>
+<form onsubmit="event.preventDefault();this.querySelector('button').textContent='Merci ! Message prêt à être envoyé ✓'"><input placeholder="Votre nom" required><input type="email" placeholder="Votre email" required><textarea placeholder="Parlez-moi de votre projet…"></textarea><button class="btn btn-p">Envoyer le message →</button></form>
+<p class="ph-note">Les coordonnées ci-dessus sont des espaces réservés à remplacer par les vraies informations.</p></div></div></section>
 
-<body class="antialiased">
-  <!-- NAV -->
-  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-bg/90 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="font-extrabold text-white tracking-tight">Raed Guesmi</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-        <a class="hover:text-white transition" href="#about">About</a>
-        <a class="hover:text-white transition" href="#skills">Skills</a>
-        <a class="hover:text-white transition" href="#experience">Experience</a>
-        <a class="hover:text-white transition" href="#projects">Projects</a>
-        <a class="hover:text-white transition" href="#certifications">Certifications</a>
-        <a class="hover:text-white transition" href="#contact">Contact</a>
-      </nav>
-      <a href="Cv_Raed.Guesmii.pdf" download class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
-        Download CV
-      </a>
-    </div>
-  </header>
+<footer><div class="wrap"><span>© 2026 Raed Guesmi — Social Media Manager</span><span>Instagram · LinkedIn · TikTok</span></div></footer>
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40));
+burger.onclick=()=>links.classList.toggle('open');links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+if(location.hash==='#static')document.querySelectorAll('.rv').forEach(el=>{el.classList.add('in');el.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%')});
+</script><div class="lb" id="lb"><button class="x" aria-label="Fermer">✕</button><button class="pv" aria-label="Précédent">‹</button><img alt=""><p></p><button class="nx" aria-label="Suivant">›</button></div>
+<script>
+(()=>{const lb=document.getElementById('lb'),im=lb.querySelector('img'),cp=lb.querySelector('p');let list=[],i=0;
+const show=()=>{im.src=list[i].dataset.src;cp.textContent=list[i].dataset.cap};
+document.querySelectorAll('.gi').forEach(g=>g.onclick=()=>{const c=g.closest('.pg,.masonry,.dg');list=[...c.querySelectorAll('.gi:not(.hide)')];i=list.indexOf(g);show();lb.classList.add('open')});
+lb.querySelector('.x').onclick=()=>lb.classList.remove('open');lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+lb.querySelector('.pv').onclick=()=>{i=(i-1+list.length)%list.length;show()};lb.querySelector('.nx').onclick=()=>{i=(i+1)%list.length;show()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowRight')lb.querySelector('.nx').click();if(e.key==='ArrowLeft')lb.querySelector('.pv').click()});
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.masonry .gi').forEach(g=>g.classList.toggle('hide',b.dataset.f!=='all'&&g.dataset.cat!==b.dataset.f))});})();
+</script></body></html>
 
-  <main id="home" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- HERO -->
-    <section class="py-16 md:py-24 border-b border-slate-800">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-8">
-          <p class="text-brand font-semibold mb-2">Cybersecurity Engineer</p>
-          <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
-            Raed Guesmi
-          </h1>
-          <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl">
-            I secure modern systems by combining <strong>penetration testing</strong>, <strong>DevSecOps automation</strong>, and <strong>resilient infrastructure engineering</strong>.
-            My focus is simple: reduce risk, improve security posture, and ship secure software faster.
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer"
-               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer"
-               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
-              LinkedIn
-            </a>
-            <a href="https://tryhackme.com/p/yourtryhackme" target="_blank" rel="noopener noreferrer"
-               class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
-              TryHackMe
-            </a>
-            <a href="#contact"
-               class="rounded-lg bg-white text-slate-900 px-4 py-2 font-semibold hover:bg-slate-200 transition">
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4">
-          <div class="section-card p-4 shadow-soft">
-            <img
-              src="12.png.png"
-              onerror="this.onerror=null;this.src='https://placehold.co/500x500/121a2b/e2e8f0?text=Raed+Guesmi';"
-              alt="Raed Guesmi profile picture"
-              class="w-full aspect-square object-cover rounded-xl border border-slate-700"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-14 reveal">
-      <div class="section-card p-6 md:p-8">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">About</h2>
-        <p class="mt-4 text-slate-300 leading-relaxed">
-          Cybersecurity Engineer with hands-on experience across offensive testing, defensive monitoring, and secure platform operations.
-          I work at the intersection of <strong>security engineering</strong> and <strong>DevOps</strong> to build systems that are secure by design, observable in production, and scalable under pressure.
-        </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="py-8 reveal">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Technical Skills</h2>
-      <div class="grid md:grid-cols-3 gap-5">
-        <article class="section-card p-6">
-          <h3 class="text-lg font-semibold text-white">Cybersecurity</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300">
-            <li>Penetration Testing (Web, Network, AD, Mobile)</li>
-            <li>Security Audits & Risk Assessments</li>
-            <li>Incident Response & Forensics</li>
-            <li>Firewall & IDS/IPS Hardening</li>
-            <li>Compliance: ISO 27001, NIST</li>
-          </ul>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-lg font-semibold text-white">Systems & Cloud</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300">
-            <li>Linux & Windows Server Administration</li>
-            <li>Active Directory & Identity Management</li>
-            <li>Virtualization (Proxmox, VMware)</li>
-            <li>AWS / Azure Fundamentals</li>
-            <li>Backup & Disaster Recovery</li>
-          </ul>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-lg font-semibold text-white">DevSecOps & Development</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300">
-            <li>Docker, Kubernetes</li>
-            <li>CI/CD (Jenkins, GitLab CI)</li>
-            <li>Terraform, Ansible</li>
-            <li>Python, PHP/Laravel, Spring Boot</li>
-            <li>MERN Stack</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="py-14 reveal">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Professional Experience</h2>
-
-      <div class="space-y-5">
-        <article class="section-card p-6">
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <h3 class="text-xl font-semibold text-white">DevSecOps & Systems Engineer — TiktakPro</h3>
-            <span class="text-xs font-semibold rounded-full bg-green-900/50 text-green-300 px-3 py-1">Current</span>
-          </div>
-          <p class="mt-1 text-sm muted">March 2025 — Present</p>
-          <p class="mt-4 text-slate-300">
-            Leading secure SDLC integration and infrastructure hardening through automation, monitoring, and policy-based controls.
-          </p>
-          <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-300 text-sm">
-            <li>Integrated SAST/DAST gates into CI/CD pipelines for continuous security validation.</li>
-            <li>Implemented SIEM monitoring and correlation workflows to improve threat detection and response speed.</li>
-            <li>Automated infrastructure provisioning with IaC and established baseline security standards.</li>
-          </ul>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">Cybersecurity & System Administration Intern — SFM Group</h3>
-          <p class="mt-1 text-sm muted">February 2024 — August 2024 (6 months)</p>
-          <p class="mt-4 text-slate-300">
-            Delivered both offensive and defensive security tasks while supporting infrastructure operations.
-          </p>
-          <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-300 text-sm">
-            <li>Performed penetration testing on web applications and Active Directory environments.</li>
-            <li>Conducted vulnerability assessments and hardening for critical systems.</li>
-            <li>Built and deployed a Capture The Flag training platform for awareness and skills practice.</li>
-          </ul>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">Cybersecurity Analyst Intern — Next Step</h3>
-          <p class="mt-1 text-sm muted">May 2023 — August 2023 (3 months)</p>
-          <p class="mt-4 text-slate-300">
-            Focused on network defense, firewall operations, and abnormal traffic analysis with Wireshark.
-          </p>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">Web Developer & DevOps Intern — Green.tech</h3>
-          <p class="mt-1 text-sm muted">May 2023 — August 2023 (3 months)</p>
-          <p class="mt-4 text-slate-300">
-            Developed secure MERN applications and deployment pipelines with Docker/Kubernetes practices.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="py-14 reveal">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Selected Projects</h2>
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">FortiLearn</h3>
-          <p class="mt-2 text-slate-300 text-sm">
-            Interactive cybersecurity training platform with practical attack simulation (XSS, SQLi, privilege escalation).
-          </p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs">
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Node.js</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">React</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Docker</span>
-          </div>
-          <div class="mt-4 flex gap-3 text-sm">
-            <a href="#" class="text-brand hover:underline">Live Demo</a>
-            <a href="#" class="text-brand hover:underline">GitHub</a>
-          </div>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">Next Generation SOC for Banking</h3>
-          <p class="mt-2 text-slate-300 text-sm">
-            Security platform combining automated testing, threat detection, and awareness workflows for financial environments.
-          </p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs">
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Python</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Jenkins</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Terraform</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Splunk</span>
-          </div>
-          <div class="mt-4 flex gap-3 text-sm">
-            <a href="#" class="text-brand hover:underline">Case Study</a>
-            <a href="#" class="text-brand hover:underline">GitHub</a>
-          </div>
-        </article>
-
-        <article class="section-card p-6">
-          <h3 class="text-xl font-semibold text-white">DevSecOps Pipeline Implementation</h3>
-          <p class="mt-2 text-slate-300 text-sm">
-            End-to-end secure delivery pipeline with integrated code and infrastructure security controls.
-          </p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs">
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">CI/CD</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Terraform</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">Kubernetes</span>
-            <span class="rounded-full bg-blue-900/40 text-blue-200 px-2 py-1">AWS</span>
-          </div>
-          <div class="mt-4 flex gap-3 text-sm">
-            <a href="#" class="text-brand hover:underline">Architecture</a>
-            <a href="#" class="text-brand hover:underline">GitHub</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="py-14 reveal">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Certifications & Badges</h2>
-      <div class="space-y-4">
-        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <h3 class="font-semibold text-white">eCPPT</h3>
-            <p class="text-sm muted">eLearnSecurity Certified Professional Penetration Tester</p>
-          </div>
-          <a href="https://certs.ine.com/8dd75524-f315-44c4-8e19-7e0268cef492#acc.rv6opEJh" target="_blank" rel="noopener noreferrer"
-             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
-            Verify
-          </a>
-        </article>
-
-        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <h3 class="font-semibold text-white">eJPT</h3>
-            <p class="text-sm muted">eLearnSecurity Junior Penetration Tester</p>
-          </div>
-          <a href="https://certs.ine.com/1cebe1a3-34f7-4344-af68-76af0930645c#acc.v8U5KRVW" target="_blank" rel="noopener noreferrer"
-             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
-            Verify
-          </a>
-        </article>
-
-        <article class="section-card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <h3 class="font-semibold text-white">Cisco Badges</h3>
-            <p class="text-sm muted">Ethical Hacking, CCNA, CyberOps, Network Attack, Network Defense</p>
-          </div>
-          <a href="https://www.credly.com/users/raed-guesmi/badges" target="_blank" rel="noopener noreferrer"
-             class="inline-flex justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition">
-            View All
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-14 reveal">
-      <div class="section-card p-6 md:p-8">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Contact</h2>
-        <p class="mt-3 text-slate-300">
-          Open to cybersecurity engineering, DevSecOps, and security-focused infrastructure roles.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a href="mailto:raed.guesmi00@gmail.com"
-             class="rounded-lg bg-white text-slate-900 px-4 py-2 font-semibold hover:bg-slate-200 transition">
-            raed.guesmi00@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer"
-             class="rounded-lg border border-slate-600 px-4 py-2 font-medium hover:border-slate-400 hover:text-white transition">
-            Message on LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-slate-800 py-8 mt-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p>© 2026 Raed Guesmi. All rights reserved.</p>
-      <p>Built with security and clarity in mind.</p>
-    </div>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-  </script>
-</body>
-</html>
